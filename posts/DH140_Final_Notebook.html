@@ -244,6 +244,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="preparing-the-data" class="level2">
 <h2 class="anchored" data-anchor-id="preparing-the-data">Preparing the Data</h2>
 <div id="cell-5" class="cell" data-execution_count="3">
+<details class="code-fold">
+<summary>Show the code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the datasets</span></span>
@@ -271,6 +273,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the first few rows of the dataset</span></span>
 <span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <div>
 
@@ -363,6 +366,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Summary statistics, such as mean, median, standard deviation, and others, were calculated for both the Cost of Living Index and GDP per capita. These statistics provide a high-level overview of the data and help identify any outliers or anomalies.</li>
 </ul>
 <div id="cell-7" class="cell" data-execution_count="12">
+<details class="code-fold">
+<summary>Show the code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df[[<span class="st">'Cost of Living Index'</span>, <span class="st">'GDP per Capita'</span>]].describe())</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>max_gdp_index <span class="op">=</span> df[<span class="st">'GDP per Capita'</span>].idxmax()</span>
@@ -377,6 +382,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Highest Cost of Living Index Country: "</span> <span class="op">+</span> <span class="bu">str</span>(df.loc[max_cost_index, <span class="st">'Country'</span>] <span class="op">+</span> <span class="st">", Cost of Living Index: "</span> <span class="op">+</span> <span class="bu">str</span>(df.loc[max_cost_index, <span class="st">'GDP per Capita'</span>])))</span>
 <span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Lowest Cost of Living Index Country: "</span> <span class="op">+</span> <span class="bu">str</span>(df.loc[min_cost_index, <span class="st">'Country'</span>] <span class="op">+</span> <span class="st">", Cost of Living Index: "</span> <span class="op">+</span> <span class="bu">str</span>(df.loc[min_cost_index, <span class="st">'Cost of Living Index'</span>])))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>       Cost of Living Index  GDP per Capita
 count            111.000000      111.000000
@@ -404,6 +410,8 @@ Lowest Cost of Living Index Country: Pakistan, Cost of Living Index: 18.8</code>
 <h3 class="anchored" data-anchor-id="histograms">Histograms</h3>
 <p>Histograms can help visualize the distribution of the Cost of Living Index and GDP per capita. This supports the identification of central tendencies and overall spread of the data.</p>
 <div id="cell-11" class="cell" data-execution_count="5">
+<details class="code-fold">
+<summary>Show the code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Histograms</span></span>
@@ -419,10 +427,11 @@ Lowest Cost of Living Index Country: Pakistan, Cost of Living Index: 18.8</code>
 <span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
 <span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="DH140_Final_Notebook_files/figure-html/cell-4-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="DH140_Final_Notebook_files/figure-html/cell-5-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -435,6 +444,8 @@ Lowest Cost of Living Index Country: Pakistan, Cost of Living Index: 18.8</code>
 <h2 class="anchored" data-anchor-id="scatter-plot">Scatter Plot</h2>
 <p>A scatter plot can be utilized to examine the relationship between GDP per capita and the Cost of Living Index. This visual representation allows for the observation of any possible trends or correlations between GDP and Cost of Living Index.</p>
 <div id="cell-14" class="cell" data-execution_count="6">
+<details class="code-fold">
+<summary>Show the code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Scatter Plot</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(x<span class="op">=</span><span class="st">'GDP per Capita'</span>, y<span class="op">=</span><span class="st">'Cost of Living Index'</span>, data<span class="op">=</span>df)</span>
@@ -442,10 +453,11 @@ Lowest Cost of Living Index Country: Pakistan, Cost of Living Index: 18.8</code>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'GDP per Capita (USD)'</span>)</span>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Cost of Living Index'</span>)</span>
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="DH140_Final_Notebook_files/figure-html/cell-5-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="DH140_Final_Notebook_files/figure-html/cell-6-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -454,10 +466,13 @@ Lowest Cost of Living Index Country: Pakistan, Cost of Living Index: 18.8</code>
 <li>This plot immediately showns an overall linear trend between GDP and Cost of Living Index, but it also provides information about possible outliers in the dataset, showing certain countries with very high Cost of Living Index scores while still having relatively low GDP per Capita. To further support this analysis, we can compute the correlation score between GDP per Capita and the Cost of Living Index scores.</li>
 </ul>
 <div id="cell-16" class="cell" data-execution_count="7">
+<details class="code-fold">
+<summary>Show the code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> pearsonr</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>correlation, p_value <span class="op">=</span> pearsonr(df[<span class="st">'GDP per Capita'</span>], df[<span class="st">'Cost of Living Index'</span>])</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Correlation coefficient: </span><span class="sc">{</span>correlation<span class="sc">:.2f}</span><span class="ss">'</span>)</span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'P-value: </span><span class="sc">{</span>p_value<span class="sc">:.2e}</span><span class="ss">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Correlation coefficient: 0.74
 P-value: 7.33e-21</code></pre>
@@ -470,6 +485,8 @@ P-value: 7.33e-21</code></pre>
 <h3 class="anchored" data-anchor-id="further-correlation-analysis">Further Correlation Analysis</h3>
 <p>To observe further relationships in the dataset, we can utilize a correlation matrix heatmap and a pairplot to observe correlations across all features in our dataset.</p>
 <div id="cell-19" class="cell" data-execution_count="8">
+<details class="code-fold">
+<summary>Show the code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Correlation matrix</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>correlation_matrix <span class="op">=</span> df.loc[:, df.columns <span class="op">!=</span> <span class="st">'Country'</span>].corr()</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -478,16 +495,7 @@ P-value: 7.33e-21</code></pre>
 <span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>sns.heatmap(correlation_matrix, annot<span class="op">=</span><span class="va">True</span>, cmap<span class="op">=</span><span class="st">'coolwarm'</span>)</span>
 <span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Correlation Matrix'</span>)</span>
 <span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="DH140_Final_Notebook_files/figure-html/cell-7-output-1.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
-<div id="cell-20" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>sns.pairplot(df[[<span class="st">'Cost of Living Index'</span>, <span class="st">'GDP per Capita'</span>, <span class="st">'Rent Index'</span>, <span class="st">'Cost of Living Plus Rent Index'</span>, <span class="st">'Groceries Index'</span>, <span class="st">'Restaurant Price Index'</span>, <span class="st">'Local Purchasing Power Index'</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -496,10 +504,25 @@ P-value: 7.33e-21</code></pre>
 </div>
 </div>
 </div>
+<div id="cell-20" class="cell" data-execution_count="9">
+<details class="code-fold">
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>sns.pairplot(df[[<span class="st">'Cost of Living Index'</span>, <span class="st">'GDP per Capita'</span>, <span class="st">'Rent Index'</span>, <span class="st">'Cost of Living Plus Rent Index'</span>, <span class="st">'Groceries Index'</span>, <span class="st">'Restaurant Price Index'</span>, <span class="st">'Local Purchasing Power Index'</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="DH140_Final_Notebook_files/figure-html/cell-9-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
 <ul>
 <li>From these plots, it is made clear that GDP seems to correlate highly with all cost indices within our dataset. This further supports the idea that the overall cost for basic necessities, aka Cost of Living, is higher in countries with larger GDPs. To see how the indices alone interact and vary among our dataset, we can utilize a box plot to gain a simple understanding of their values and range.</li>
 </ul>
 <div id="cell-22" class="cell" data-execution_count="10">
+<details class="code-fold">
+<summary>Show the code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Box plot of various indices</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>indices <span class="op">=</span> [<span class="st">'Cost of Living Index'</span>, <span class="st">'Rent Index'</span>, <span class="st">'Cost of Living Plus Rent Index'</span>, <span class="st">'Groceries Index'</span>, <span class="st">'Restaurant Price Index'</span>, <span class="st">'Local Purchasing Power Index'</span>]</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">8</span>))</span>
@@ -508,10 +531,11 @@ P-value: 7.33e-21</code></pre>
 <span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Index Value'</span>)</span>
 <span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>plt.xticks(rotation<span class="op">=</span><span class="dv">45</span>)</span>
 <span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="DH140_Final_Notebook_files/figure-html/cell-9-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="DH140_Final_Notebook_files/figure-html/cell-10-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -525,6 +549,8 @@ P-value: 7.33e-21</code></pre>
 <h2 class="anchored" data-anchor-id="focused-analysis">Focused Analysis</h2>
 <p>As the primary objective of this project is to hone in on the countries existing as outliers, we can utilize python to extract such outliers and observe them more closely. To do this, we examine countries that are greater than or equal to the 75th percentile in Cost of Living Index while still being below the average global GDP.</p>
 <div id="cell-25" class="cell" data-execution_count="16">
+<details class="code-fold">
+<summary>Show the code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Detailed Analysis</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Case studies for specific countries with high costs of living and low GDP per capita</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -534,6 +560,7 @@ P-value: 7.33e-21</code></pre>
 <span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the filtered data</span></span>
 <span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(high_cost_low_gdp[<span class="st">'Country'</span>])</span>
 <span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>4     Barbados
 28     Uruguay
@@ -542,6 +569,8 @@ Name: Country, dtype: object</code></pre>
 </div>
 <p>From this extraction, we find two countries that meet the criteria of having a very high Cost of Living Index while still maintaining a sub-average GDP per Capita: Barbados and Uruguay. To further visualize these outliers, we can utilize a scatter plot with the two countries highlighted.</p>
 <div id="cell-27" class="cell" data-execution_count="14">
+<details class="code-fold">
+<summary>Show the code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define outliers</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>outliers <span class="op">=</span> [<span class="st">'Barbados'</span>, <span class="st">'Uruguay'</span>]</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -564,16 +593,19 @@ Name: Country, dtype: object</code></pre>
 <span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Show the plot</span></span>
 <span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="DH140_Final_Notebook_files/figure-html/cell-11-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="DH140_Final_Notebook_files/figure-html/cell-12-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>To show how these outliers compare to the general trend of the dataset, we can plot a regression line ontop of the existing plot.</p>
 <div id="cell-29" class="cell" data-execution_count="19">
+<details class="code-fold">
+<summary>Show the code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> stats</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Define outliers</span></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>outliers <span class="op">=</span> [<span class="st">'Barbados'</span>, <span class="st">'Uruguay'</span>]</span>
@@ -604,10 +636,11 @@ Name: Country, dtype: object</code></pre>
 <span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a><span class="co"># Show the plot</span></span>
 <span id="cb14-30"><a href="#cb14-30" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="DH140_Final_Notebook_files/figure-html/cell-12-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="DH140_Final_Notebook_files/figure-html/cell-13-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -736,7 +769,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
+      var filterRegex = new RegExp("https:\/\/nickmakaha\.github\.io\/DH140_FinalProject\/");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
