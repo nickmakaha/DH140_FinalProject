@@ -252,16 +252,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>Results</h1>
 <section id="preparing-the-data" class="level2">
 <h2 class="anchored" data-anchor-id="preparing-the-data">Preparing the Data</h2>
-<div id="cell-5" class="cell" data-execution_count="3">
+<div id="cell-4" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the datasets</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>file_path <span class="op">=</span> <span class="st">'data/Cost_of_Living_Index_by_Country_2024.csv'</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>file_path <span class="op">=</span> <span class="st">'../../data/Cost_of_Living_Index_by_Country_2024.csv'</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(file_path)</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>gdp_file_path <span class="op">=</span> <span class="st">'data/gdp-per-capita-worldbank.csv'</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>gdp_file_path <span class="op">=</span> <span class="st">'../../data/gdp-per-capita-worldbank.csv'</span></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>gdp_df <span class="op">=</span> pd.read_csv(gdp_file_path)</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter GDP data for the most recent year</span></span>
@@ -374,7 +374,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>Summary statistics, such as mean, median, standard deviation, and others, were calculated for both the Cost of Living Index and GDP per capita. These statistics provide a high-level overview of the data and help identify any outliers or anomalies.</li>
 </ul>
-<div id="cell-7" class="cell" data-execution_count="12">
+<div id="cell-6" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df[[<span class="st">'Cost of Living Index'</span>, <span class="st">'GDP per Capita'</span>]].describe())</span>
@@ -404,7 +404,7 @@ min               18.800000     1502.482200
 max              101.100000   117746.990000
 Highest GDP Country: Luxembourg, GDP: 117746.99
 Lowest GDP Country: Madagascar, GDP: 1502.4822
-Highest Cost of Living Index Country: Switzerland, Cost of Living Index: 72278.21
+Highest Cost of Living Index Country: Switzerland, Cost of Living Index: 101.1
 Lowest Cost of Living Index Country: Pakistan, Cost of Living Index: 18.8</code></pre>
 </div>
 </div>
@@ -418,7 +418,7 @@ Lowest Cost of Living Index Country: Pakistan, Cost of Living Index: 18.8</code>
 <section id="histograms" class="level3">
 <h3 class="anchored" data-anchor-id="histograms">Histograms</h3>
 <p>Histograms can help visualize the distribution of the Cost of Living Index and GDP per capita. This supports the identification of central tendencies and overall spread of the data.</p>
-<div id="cell-11" class="cell" data-execution_count="5">
+<div id="cell-10" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -440,7 +440,7 @@ Lowest Cost of Living Index Country: Pakistan, Cost of Living Index: 18.8</code>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="DH140_Final_Notebook_files/figure-html/cell-5-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="DH140_Final_Notebook_files/figure-html/cell-4-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -452,7 +452,7 @@ Lowest Cost of Living Index Country: Pakistan, Cost of Living Index: 18.8</code>
 <section id="scatter-plot" class="level2">
 <h2 class="anchored" data-anchor-id="scatter-plot">Scatter Plot</h2>
 <p>A scatter plot can be utilized to examine the relationship between GDP per capita and the Cost of Living Index. This visual representation allows for the observation of any possible trends or correlations between GDP and Cost of Living Index.</p>
-<div id="cell-14" class="cell" data-execution_count="6">
+<div id="cell-13" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Scatter Plot</span></span>
@@ -466,7 +466,7 @@ Lowest Cost of Living Index Country: Pakistan, Cost of Living Index: 18.8</code>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="DH140_Final_Notebook_files/figure-html/cell-6-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="DH140_Final_Notebook_files/figure-html/cell-5-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -474,7 +474,7 @@ Lowest Cost of Living Index Country: Pakistan, Cost of Living Index: 18.8</code>
 <ul>
 <li>This plot immediately showns an overall linear trend between GDP and Cost of Living Index, but it also provides information about possible outliers in the dataset, showing certain countries with very high Cost of Living Index scores while still having relatively low GDP per Capita. To further support this analysis, we can compute the correlation score between GDP per Capita and the Cost of Living Index scores.</li>
 </ul>
-<div id="cell-16" class="cell" data-execution_count="7">
+<div id="cell-15" class="cell" data-execution_count="7">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> pearsonr</span>
@@ -493,7 +493,7 @@ P-value: 7.33e-21</code></pre>
 <section id="further-correlation-analysis" class="level3">
 <h3 class="anchored" data-anchor-id="further-correlation-analysis">Further Correlation Analysis</h3>
 <p>To observe further relationships in the dataset, we can utilize a correlation matrix heatmap and a pairplot to observe correlations across all features in our dataset.</p>
-<div id="cell-19" class="cell" data-execution_count="8">
+<div id="cell-18" class="cell" data-execution_count="8">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Correlation matrix</span></span>
@@ -508,12 +508,12 @@ P-value: 7.33e-21</code></pre>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="DH140_Final_Notebook_files/figure-html/cell-8-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="DH140_Final_Notebook_files/figure-html/cell-7-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
-<div id="cell-20" class="cell" data-execution_count="9">
+<div id="cell-19" class="cell" data-execution_count="9">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>sns.pairplot(df[[<span class="st">'Cost of Living Index'</span>, <span class="st">'GDP per Capita'</span>, <span class="st">'Rent Index'</span>, <span class="st">'Cost of Living Plus Rent Index'</span>, <span class="st">'Groceries Index'</span>, <span class="st">'Restaurant Price Index'</span>, <span class="st">'Local Purchasing Power Index'</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -521,7 +521,7 @@ P-value: 7.33e-21</code></pre>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="DH140_Final_Notebook_files/figure-html/cell-9-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="DH140_Final_Notebook_files/figure-html/cell-8-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -529,7 +529,7 @@ P-value: 7.33e-21</code></pre>
 <ul>
 <li>From these plots, it is made clear that GDP seems to correlate highly with all cost indices within our dataset. This further supports the idea that the overall cost for basic necessities, aka Cost of Living, is higher in countries with larger GDPs. To see how the indices alone interact and vary among our dataset, we can utilize a box plot to gain a simple understanding of their values and range.</li>
 </ul>
-<div id="cell-22" class="cell" data-execution_count="10">
+<div id="cell-21" class="cell" data-execution_count="10">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Box plot of various indices</span></span>
@@ -544,7 +544,7 @@ P-value: 7.33e-21</code></pre>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="DH140_Final_Notebook_files/figure-html/cell-10-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="DH140_Final_Notebook_files/figure-html/cell-9-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -557,7 +557,7 @@ P-value: 7.33e-21</code></pre>
 <section id="focused-analysis" class="level2">
 <h2 class="anchored" data-anchor-id="focused-analysis">Focused Analysis</h2>
 <p>As the primary objective of this project is to hone in on the countries existing as outliers, we can utilize python to extract such outliers and observe them more closely. To do this, we examine countries that are greater than or equal to the 75th percentile in Cost of Living Index while still being below the average global GDP.</p>
-<div id="cell-25" class="cell" data-execution_count="16">
+<div id="cell-24" class="cell" data-execution_count="11">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Detailed Analysis</span></span>
@@ -577,7 +577,7 @@ Name: Country, dtype: object</code></pre>
 </div>
 </div>
 <p>From this extraction, we find two countries that meet the criteria of having a very high Cost of Living Index while still maintaining a sub-average GDP per Capita: Barbados and Uruguay. To further visualize these outliers, we can utilize a scatter plot with the two countries highlighted.</p>
-<div id="cell-27" class="cell" data-execution_count="14">
+<div id="cell-26" class="cell" data-execution_count="12">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define outliers</span></span>
@@ -606,13 +606,13 @@ Name: Country, dtype: object</code></pre>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="DH140_Final_Notebook_files/figure-html/cell-12-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="DH140_Final_Notebook_files/figure-html/cell-11-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>To show how these outliers compare to the general trend of the dataset, we can plot a regression line ontop of the existing plot.</p>
-<div id="cell-29" class="cell" data-execution_count="19">
+<div id="cell-28" class="cell" data-execution_count="13">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> stats</span>
@@ -649,7 +649,7 @@ Name: Country, dtype: object</code></pre>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="DH140_Final_Notebook_files/figure-html/cell-13-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="DH140_Final_Notebook_files/figure-html/cell-12-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
